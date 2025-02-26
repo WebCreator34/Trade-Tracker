@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Trade Tracker</h1>
+    <form id="tradeForm">
+        <label for="tradeDate">Date:</label>
+        <input type="date" id="tradeDate" required>
+        
+        <label for="asset">Asset:</label>
+        <input type="text" id="asset" placeholder="Asset (e.g., BTC)" required>
+        
+        <label for="tradeType">Type:</label>
+        <select id="tradeType" required>
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+        </select>
+        
+        <label for="price">Price:</label>
+        <input type="number" id="price" placeholder="Price" step="0.01" required>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" placeholder="Quantity" step="0.001" required>
+        
+        <button type="submit">Add Trade</button>
+        <button type="reset">Clear</button>
+    </form>
+    
+    <label for="sortTrades">Sort by:</label>
+    <select id="sortTrades">
+        <option value="date">Date</option>
+        <option value="asset">Asset</option>
+        <option value="type">Type</option>
+        <option value="price">Price</option>
+        <option value="quantity">Quantity</option>
+    </select>
+    
+    <table id="tradeTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Asset</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tradeList"></tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
